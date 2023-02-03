@@ -36,7 +36,6 @@ function listen(io) {
         });
         //listen for decline new game request
         socket.on('newGameDecline', () => {
-            socket.to(room).emit('newGameDecline');
             socket.leave(room);
             console.log(`Client ${socket.id} leave room: ${room}`);
         });
